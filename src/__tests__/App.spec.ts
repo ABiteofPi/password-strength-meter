@@ -5,7 +5,7 @@ import { createMemoryHistory, createRouter } from 'vue-router'
 import App from '../App.vue'
 
 describe('App', () => {
-  it('mounts renders properly', () => {
+  it('mounts renders properly', async () => {
     const router = createRouter({
       history: createMemoryHistory(),
       routes: [
@@ -21,6 +21,10 @@ describe('App', () => {
         plugins: [router],
       },
     })
-    expect(wrapper.find('div').exists()).toBe(true)
+
+    await router.isReady()
+    await wrapper.vm.$nextTick()
+
+    expect(wrapper.text()).toContain('This page is under construction')
   })
 })
