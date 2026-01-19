@@ -1,3 +1,10 @@
+## [0.1.2](https://github.com/ABiteofPi/followthemouse/compare/v0.1.1...v0.1.2) (2026-01-19)
+
+
+### Bug Fixes
+
+* updated text ([62d5a7d](https://github.com/ABiteofPi/followthemouse/commit/62d5a7d1a95c2a0d33734d107fb0082873c1b231))
+
 ## [0.1.1](https://github.com/ABiteofPi/followthemouse/compare/v0.1.0...v0.1.1) (2026-01-19)
 
 
