@@ -12,7 +12,7 @@ permissions:
   pull-requests: write
 
 jobs:
-  integration:
+  Integration:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -43,7 +43,7 @@ jobs:
 
   release:
     name: Semantic Release
-    needs: integration
+    needs: Integration
     runs-on: ubuntu-latest
     outputs:
       new_release_published: ${{ steps.semantic.outputs.new_release_published }}
@@ -71,7 +71,7 @@ jobs:
 
   deploy:
     name: Deploy to GitHub Pages
-    needs: [integration, release]
+    needs: [Integration, release]
     if: needs.release.outputs.new_release_published == 'true'
     environment:
       name: github-pages
