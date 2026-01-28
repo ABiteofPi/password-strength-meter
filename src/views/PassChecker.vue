@@ -5,17 +5,6 @@ import { analyzePassword } from '../types/logic';
 const password = ref('');
 const result = computed(() => analyzePassword(password.value));
 
-// function getBarColor(level: string) {
-//   const colors: Record<string, string> = {
-//     'Too Weak': '#ff4d4d',
-//     'Weak': '#ffa500',
-//     'Medium': '#ffff00',
-//     'Strong': '#90ee90',
-//     'Very Strong': '#008000'
-//   };
-//   return colors[level];
-// }
-
 const strengthColor = computed(() => {
   if (result.value.score === 0) return ''
   if (result.value.level === 'Too Weak') return 'too-weak'
@@ -23,6 +12,7 @@ const strengthColor = computed(() => {
   if (result.value.level === 'Moderate') return 'moderate'
   if (result.value.level === 'Strong') return 'strong'
   if (result.value.level === 'Very Strong') return 'very-strong'
+  return ''
 });
 
 </script>
@@ -32,10 +22,6 @@ const strengthColor = computed(() => {
     <h1 class="my-5 doto title px-5">Password Strength Meter</h1>
     <div class="d-flex flex-column gap-2 mt-5">
       <input v-model="password" type="password" class="input" :class="strengthColor" placeholder="Type a password..." />
-
-      <!-- <div class="meter d-flex align-items-center justify-content-center px-4">
-        <div class="progress" :style="{ width: result.score + '%', backgroundColor: getBarColor(result.level) }"></div>
-      </div> -->
 
       <p class="doto px-4 py-2 mb-2 align-self-center">Strength: <strong :class="strengthColor">{{ result.level
       }}</strong></p>
