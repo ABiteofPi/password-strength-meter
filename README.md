@@ -1,4 +1,4 @@
-[![Live site](https://img.shields.io/badge/Live-42b883?style=for-the-badge&logo=github)](https://abiteofpi.github.io/followthemouse/)
+[![Live site](https://img.shields.io/badge/Live-42b883?style=for-the-badge&logo=github)](https://abiteofpi.github.io/password-strength-meter/)
 
 
 # Password strength meter
